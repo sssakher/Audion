@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spotify Callback</title>
+</head>
+<body>
+  <h2>Spotify login successful</h2>
+  <p>You can close this window and return to the application.</p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+
+    if (code) {
+      document.body.innerHTML += `<p><b>Authorization Code:</b></p><p>${code}</p>`;
+    }
+  </script>
+</body>
+</html>
